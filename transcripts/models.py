@@ -21,6 +21,7 @@ class StudentDetail(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     other_name = models.CharField(blank=True, null=True, max_length=50)
+    student_picture = models.ImageField(blank=True, null=True, default="default-profilepic.jpg")
     date_of_birth = models.DateField()
     student_email = models.EmailField(blank=True, null=True)
     student_parent_contact = models.CharField(default=0, max_length=10, null=False, blank=False)
@@ -28,7 +29,6 @@ class StudentDetail(models.Model):
     student_class = models.ForeignKey('ClassName', on_delete=models.CASCADE)
     student_program = models.ForeignKey('Programs', on_delete=models.CASCADE)
     student_subjects = models.ManyToManyField('Subjects')
-
     last_modified = models.DateTimeField(auto_now=True)
     date_created = models.DateTimeField(auto_now_add=True, blank=False)
 

@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete <strong>"{{ delete_student.last_name }} {{ delete_student.first_name }}"</strong> record?</p>
+    <a href="{% url 'students-list' %}">Go Back</a>
+    <input type="submit" value="Confirm Delete">
+</form>
+
+
+
+
+{% endblock content %}
